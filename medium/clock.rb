@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Clock` class
@@ -76,6 +77,7 @@ Algorithm:
       (`@minutes` - remainder + 60). Save the result either way.
     - create a *new* `Clock` object, passing in the appropriate two results
 =end
+# rubocop:enable Layout/LineLength
 
 class Clock
   def initialize(hours, minutes)

@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Series` class
@@ -39,6 +40,7 @@ Algorithm:
     index to the starting index + (length - 1) to the `results` array
   - return `results`
 =end
+# rubocop:enable Layout/LineLength
 
 class SeriesLengthError < ArgumentError; end
 
@@ -48,7 +50,7 @@ class Series
   end
 
   def slices(length)
-    raise SeriesLengthError.new if length > digits.size
+    raise SeriesLengthError if length > digits.size
 
     results = []
     0.upto(digits.size - length) do |start_idx|

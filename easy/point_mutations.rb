@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem & Requirements:
 - Create a `DNA` class
@@ -33,6 +34,7 @@ Algorithm:
     move on, if they're different increment `point_mutations` by 1
   - return `point_mutations`
 =end
+# rubocop:enable Layout/LineLength
 
 require 'pry'
 
@@ -56,4 +58,3 @@ class DNA
 
   attr_reader :nucleotides
 end
-

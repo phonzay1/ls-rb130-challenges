@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Element` class
@@ -73,6 +74,7 @@ Algorithm:
     - use `SimpleLinkedList::from_a` to return a `SimpleLinkedList` object with
     the elements in the correct order and linking
 =end
+# rubocop:enable Layout/LineLength
 
 class Element
   attr_accessor :datum, :next, :tail, :head

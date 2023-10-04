@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `PerfectNumber` class
@@ -37,6 +38,7 @@ Algorithm:
     - for each integer, add it to `divisors` if argument % current integer == 0
   - sum the elements of the `divisors` array and return this sum
 =end
+# rubocop:enable Layout/LineLength
 
 class PerfectNumber
   def self.classify(integer)
@@ -54,7 +56,7 @@ class PerfectNumber
     private
 
     def sum_of_divisors(number)
-      (1..(number/2)).each_with_object([]) do |current_num, divisors|
+      (1..(number / 2)).each_with_object([]) do |current_num, divisors|
         divisors.push(current_num) if number % current_num == 0
       end.sum
     end

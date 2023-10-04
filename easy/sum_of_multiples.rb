@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `SumOfMultiples` class
@@ -54,6 +55,7 @@ Algorithm:
       - if it is, add it to `multiples`
   - return the sum of the elements of `multiples`
 =end
+# rubocop:enable Layout/LineLength
 
 # Solution using module method
 # class SumOfMultiples
@@ -88,11 +90,12 @@ Algorithm:
 
 #-----------------------
 
-# Solution using instance method inside class method, and different method implementations
+# Solution using instance method inside class method, and different method
+# implementations
 
 class SumOfMultiples
   def initialize(*numbers)
-    @set_of_numbers = (numbers.size > 0) ? numbers : [3, 5]
+    @set_of_numbers = numbers.empty? ? [3, 5] : numbers
   end
 
   def self.to(limit)
@@ -117,4 +120,3 @@ class SumOfMultiples
     results
   end
 end
-

@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem & Requirements:
 - create a class RomanNumeral
@@ -49,6 +50,7 @@ Algorithm:
       - if the digit <= 3, return 'M' * the digit
   - return `numerals`
 =end
+# rubocop:enable Layout/LineLength
 
 # Roman numerals for reference
 # ROMAN_NUMERALS = {
@@ -71,9 +73,9 @@ class RomanNumeral
     numerals = ''
     digits.each_with_index do |digit, index|
       case index
-      when 0 then numerals.prepend(ones(digit))
-      when 1 then numerals.prepend(tens(digit))
-      when 2 then numerals.prepend(hundreds(digit))
+      when 0 then numerals.prepend(ones)
+      when 1 then numerals.prepend(tens)
+      when 2 then numerals.prepend(hundreds)
       when 3 then numerals.prepend('M' * digit)
       end
     end
@@ -84,40 +86,33 @@ class RomanNumeral
 
   attr_reader :number, :digits
 
-  def ones(digit)
+  def ones
     case digits[0]
     when (0..3) then 'I' * digits[0]
     when 4 then 'IV'
     when 5 then 'V'
-    when (5..8) then 'V' + ('I' * (digits[0] % 5))
+    when (5..8) then "V#{'I' * (digits[0] % 5)}"
     when 9 then 'IX'
     end
   end
 
-  def tens(digit)
+  def tens
     case digits[1]
     when (0..3) then 'X' * digits[1]
     when 4 then 'XL'
     when 5 then 'L'
-    when (5..8) then 'L' + ('X' * (digits[1] % 5))
+    when (5..8) then "L#{'X' * (digits[1] % 5)}"
     when 9 then 'XC'
     end
   end
 
-  def hundreds(digit)
+  def hundreds
     case digits[2]
     when (0..3) then 'C' * digits[2]
     when 4 then 'CD'
     when 5 then 'D'
-    when (5..8) then 'D' + ('C' * (digits[2] % 5))
+    when (5..8) then "D#{'C' * (digits[2] % 5)}"
     when 9 then 'CM'
     end
   end
-
-  # The beginning of a `thousands` method, should we ever use numbers > 3000
-  # def thousands(digit)
-  #   case digits[3]
-  #   when (0..3) then 'M' * digits[3]
-  #   end
-  # end
 end

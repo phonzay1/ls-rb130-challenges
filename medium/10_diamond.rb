@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Diamond` class
@@ -60,6 +61,7 @@ Algorithm:
       ' ' * INSIDE_SPACES[ord_num.chr] + "#{ord_num.chr}" + ' ' * outside_spaces + "\n"
   -return the string
 =end
+# rubocop:enable Layout/LineLength
 
 require 'pry'
 
@@ -84,7 +86,7 @@ class Diamond
 
     def outermost_lines(letter)
       ' ' * FIRST_LAST_LINES_OUTSIDE_SPACES[letter] + 'A' + \
-      ' ' * FIRST_LAST_LINES_OUTSIDE_SPACES[letter]+ "\n"
+      ' ' * FIRST_LAST_LINES_OUTSIDE_SPACES[letter] + "\n"
     end
 
     def inner_diamond(letter)

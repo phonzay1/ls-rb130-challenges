@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - create `Scrabble` class
@@ -43,6 +44,7 @@ Algorithm:
   - return false if the word is an empty string, includes whitespace, or is nil
   - otherwise return true
 =end
+# rubocop:enable Layout/LineLength
 
 require 'pry'
 
@@ -82,7 +84,7 @@ class Scrabble
   attr_reader :word
 
   def valid_word?
-    word == '' || word == nil || word.match?(/\s/) ? false : true
+    !(word == '' || word.nil? || word.match?(/\s/))
   end
 end
 

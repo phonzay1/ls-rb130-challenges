@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `CustomSet` class
@@ -77,6 +78,7 @@ Data Structure(s):
 --------------------
 Algorithm:
 =end
+# rubocop:enable Layout/LineLength
 
 class CustomSet
   def initialize(array=[])
@@ -100,7 +102,7 @@ class CustomSet
   end
 
   def ==(other)
-     set.sort == other.set.sort
+    set.sort == other.set.sort
   end
 
   alias eql? ==

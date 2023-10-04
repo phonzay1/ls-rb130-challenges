@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Octal` class
@@ -32,6 +33,7 @@ Algorithm:
     - multiply each element by (8 raised to the power of the element's index)
   - sum the elements of the transformed array, and return that sum
 =end
+# rubocop:enable Layout/LineLength
 
 class Octal
   def initialize(octal_num)
@@ -40,7 +42,7 @@ class Octal
 
   def to_decimal
     return 0 if octal_num.match?(/[^0-7]/)
-    octal_num.to_i.digits.map.with_index { |digit, index| digit * (8 ** index) }.sum
+    octal_num.to_i.digits.map.with_index { |digit, index| digit * (8**index) }.sum
   end
 
   private

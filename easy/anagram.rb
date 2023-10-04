@@ -1,9 +1,10 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Anagram` class
 
   - constructor method
-     - takes one argument (a string), the word to be tested for anagrams
+    - takes one argument (a string), the word to be tested for anagrams
 
   - `#match`
     - takes one arg, an array of strings
@@ -36,6 +37,7 @@ Algorithm:
     test word downcased
   - return `anagrams`
 =end
+# rubocop:enable Layout/LineLength
 
 class Anagram
   def initialize(word)
@@ -47,9 +49,7 @@ class Anagram
     comparison_chars = words.map { |other_word| other_word.downcase.chars.sort }
     anagrams = []
     comparison_chars.each_with_index do |subarr, idx|
-      if subarr == characters && words[idx].downcase != word
-        anagrams << words[idx]
-      end
+      anagrams << words[idx] if subarr == characters && words[idx].downcase != word
     end
     anagrams
   end

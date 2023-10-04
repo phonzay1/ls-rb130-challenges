@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Meetup` class
@@ -29,13 +30,14 @@ Scratch Pad:
 Algorithm:
 - helper method for February - 28 or 29 days depending on leap year (use `Date#leap?`)
 =end
+# rubocop:enable Layout/LineLength
 
 require 'date'
 
 class Meetup
   DAYS_IN_MONTH = {
-  [9, 4, 6, 11] => 30,
-  [1, 3, 5, 7, 8, 10, 12] => 31
+    [9, 4, 6, 11] => 30,
+    [1, 3, 5, 7, 8, 10, 12] => 31
   }
 
   def initialize(year, month)

@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem & Requirements:
 + - create a `Triangle` class which new `Triangle` objects can be instantiated from
@@ -28,6 +29,7 @@ Data Structures:
 --------------------------
 Algorithm
 =end
+# rubocop:enable Layout/LineLength
 
 class ZeroOrNegativeSideError < ArgumentError; end
 class SizeInequalityError < ArgumentError; end
@@ -38,8 +40,8 @@ class Triangle
     @side2 = side2
     @side3 = side3
     @sides = [side1, side2, side3]
-    raise ZeroOrNegativeSideError.new, 'all sides must be > 0' if zero_or_negative_side
-    raise SizeInequalityError.new unless valid_side_lengths
+    raise ZeroOrNegativeSideError, 'all sides must be > 0' if zero_or_negative_side
+    raise SizeInequalityError unless valid_side_lengths
   end
 
   def kind
@@ -62,7 +64,7 @@ class Triangle
 
   def valid_side_lengths
     side1 + side2 > side3 &&
-    side2 + side3 > side1 &&
-    side3 + side1 > side2
+      side2 + side3 > side1 &&
+      side3 + side1 > side2
   end
 end

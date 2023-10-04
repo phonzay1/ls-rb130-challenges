@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - `Robot` class
@@ -50,6 +51,7 @@ Algorithm:
 
 - writer method for `@name`
 =end
+# rubocop:enable Layout/LineLength
 
 class Robot
   @@used_names = []

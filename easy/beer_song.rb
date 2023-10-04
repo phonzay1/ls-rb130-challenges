@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 =begin
 Problem/Requirements:
 - class `BeerSong`
@@ -84,10 +85,11 @@ Algorithm:
   - if the argument is -1, return the string "Go to the store and buy some more,
   99 bottles of beer on the wall.\n"
 =end
+# rubocop:enable Layout/LineLength
 
 class BeerSong
   def self.verse(number)
-    verse_first_line(number) + verse_second_line(number-1)
+    verse_first_line(number) + verse_second_line(number - 1)
   end
 
   def self.verses(start_num, end_num)
@@ -102,29 +104,31 @@ class BeerSong
     verses(99, 0)
   end
 
-  private
+  class << self
+    private
 
-  def self.verse_first_line(number)
-    case number
-    when 2..99
-      "#{number} bottles of beer on the wall, #{number} bottles of beer.\n"
-    when 1
-      "1 bottle of beer on the wall, 1 bottle of beer.\n"
-    when 0
-      "No more bottles of beer on the wall, no more bottles of beer.\n"
+    def verse_first_line(number)
+      case number
+      when 2..99
+        "#{number} bottles of beer on the wall, #{number} bottles of beer.\n"
+      when 1
+        "1 bottle of beer on the wall, 1 bottle of beer.\n"
+      when 0
+        "No more bottles of beer on the wall, no more bottles of beer.\n"
+      end
     end
-  end
 
-  def self.verse_second_line(number)
-    case number
-    when 2..99
-      "Take one down and pass it around, #{number} bottles of beer on the wall.\n"
-    when 1
-      "Take one down and pass it around, 1 bottle of beer on the wall.\n"
-    when 0
-      "Take it down and pass it around, no more bottles of beer on the wall.\n"
-    when -1
-      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    def verse_second_line(number)
+      case number
+      when 2..99
+        "Take one down and pass it around, #{number} bottles of beer on the wall.\n"
+      when 1
+        "Take one down and pass it around, 1 bottle of beer on the wall.\n"
+      when 0
+        "Take it down and pass it around, no more bottles of beer on the wall.\n"
+      when -1
+        "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+      end
     end
   end
 end
